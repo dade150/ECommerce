@@ -47,9 +47,6 @@ public class ConnectionHandler {
 
     public PreparedStatement getPreparedStatement(String sql) throws SQLException {
         Connection con =  getConnection();
-
         return con.prepareStatement(sql);
-
     }
-
 }
