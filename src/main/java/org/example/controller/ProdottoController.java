@@ -31,8 +31,7 @@ public class ProdottoController {
         post("/prodotto", (req, res) -> {
             Prodotto prodottoReq = new Gson().fromJson(req.body(), Prodotto.class);
             prodottoCrud.insert(prodottoReq);
-            Prodotto ProdottoRes = prodottoCrud.getById(prodottoReq.getId()).orElse(null);
-            HttpResponse response = new HttpResponse("200", "OK, inserito Prodotto", new Gson().toJsonTree(ProdottoRes));
+            HttpResponse response = new HttpResponse("200", "OK, inserito Prodotto");
             return new Gson().toJson(response);
         });
 
