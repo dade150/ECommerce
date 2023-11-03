@@ -13,13 +13,14 @@ import java.util.Optional;
 public class ProdottoCrud implements ProdottoDao<Prodotto>{
     @Override
     public boolean insert(Prodotto entity) throws IOException, SQLException {
-        String sql = "INSERT INTO public.\"Prodotto\" VALUES (?,?,?,?);";
+        String sql = "INSERT INTO public.\"Prodotto\" VALUES (?,?,?,?,?);";
         ConnectionHandler ch = new ConnectionHandler();
         PreparedStatement ps = ch.getPreparedStatement(sql);
-        ps.setString(1,entity.getNome());
-        ps.setString(2,entity.getDescrizione());
-        ps.setInt(3,entity.getQuantita());
-        ps.setDouble(4, entity.getPrezzo());
+        ps.setInt(1,entity.getId());
+        ps.setString(2,entity.getNome());
+        ps.setString(3,entity.getDescrizione());
+        ps.setInt(4,entity.getQuantita());
+        ps.setDouble(5, entity.getPrezzo());
         int affected = ps.executeUpdate();
         ch.closeConnection();
         ps.close();
@@ -92,5 +93,15 @@ public class ProdottoCrud implements ProdottoDao<Prodotto>{
             this.update(prodotto);
         }
         return Optional.of(prodotto);
+    }
+    public static void test(String[] args) throws SQLException, IOException {
+        ProdottoCrud crud = new ProdottoCrud();
+        List<Prodotto> rs = crud.getAll();
+        for (Prodotto r : rs) {
+            System.out.println(r.getId());
+        }
+        System.out.println(crud.getById(1).orElse(null));
+        Prodotto prodotto= new Prodotto(1,"","",0,0.0);
+        System.out.println(crud.delete(prodotto));
     }
 }

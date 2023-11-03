@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "da62c8be-e102-4a0b-9148-a5f045fce8eb",
+		"name": "ProdottoCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30904756"
+	},
+	"item": [
+		{
+			"name": "PostProdotto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 1,\r\n    \"nome\" : \"acqua\",\r\n    \"descrizione\" :\"oligominerale naturale\",\r\n    \"quantita\" : 10,\r\n    \"prezzo\" : 2.50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4567/prodotto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"prodotto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProdotti",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4567/prodotti",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"prodotti"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProdotto",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:4567/prodotto/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"prodotto",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutProdotto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 1,\r\n    \"nome\" : \"acqua\",\r\n    \"descrizione\" :\"frizzante\",\r\n    \"quantita\" : 3,\r\n    \"prezzo\" : 2.50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4567/prodotto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"prodotto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteProdotto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 1,\r\n    \"nome\" : \"\",\r\n    \"descrizione\" :\"\",\r\n    \"quantita\" : 0,\r\n    \"prezzo\" : 0.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4567/prodotto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"prodotto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAcquisti",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 1,\r\n    \"nome\" : \"acqua\",\r\n    \"descrizione\" :\"oligominerale naturale\",\r\n    \"quantita\" : 10,\r\n    \"prezzo\" : 2.50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4567/acquisto/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"acquisto",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

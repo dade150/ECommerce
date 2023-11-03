@@ -40,13 +40,11 @@ public class ProdottoController {
             return new Gson().toJson(response);
         });
         delete("/prodotto", (req, res) -> {
-            String id = req.queryParams("id");
-            Prodotto prodottoReq = new Prodotto();
-            prodottoReq.setId(Integer.parseInt(id));
+            Prodotto prodottoReq = new Gson().fromJson(req.body(), Prodotto.class);
             prodottoCrud.delete(prodottoReq);
             return new Gson().toJson(new HttpResponse("200", "OK, Prodotto cancellato"));
         });
-        get("/prodotto/:quantita", (req, res) -> {
+        get("/acquisto/:quantita", (req, res) -> {
             String quantita = req.params("quantita");
             Prodotto prodottoReq = new Gson().fromJson(req.body(), Prodotto.class);
             Prodotto result = prodottoCrud.acquista(prodottoReq.getId(),Integer.parseInt(quantita)).orElse(null);

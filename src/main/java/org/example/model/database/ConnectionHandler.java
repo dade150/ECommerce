@@ -12,7 +12,7 @@ import java.util.Properties;
 public class ConnectionHandler {
 
     private static final String DB_Url = "jdbc:";
-    private static final Path PROPRERTIES_PATH = Paths.get("src","main","java","org.example","resource","postgresql.properties");
+    private static final Path PROPRERTIES_PATH = Paths.get("src","main","java","org","example","resource","postgresql.properties");
     private Connection connection;
     private Properties dbProp;
 
